@@ -64,7 +64,18 @@ import { type CteOptions, NativeQueryBuilder } from './NativeQueryBuilder.js';
 import type { AbstractSqlConnection } from '../AbstractSqlConnection.js';
 
 export interface ExecuteOptions {
+  /**
+   * Results are mapped to entities, if you set `mapResults: false` you will get POJOs instead.
+   *
+   * @default true
+   */
   mapResults?: boolean;
+
+  /**
+   * Results are merged into the identity map, if you set `mergeResults: false` you will get unmanaged entities instead.
+   *
+   * @default true
+   */
   mergeResults?: boolean;
 }
 
